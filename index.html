@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Marilú y Enrique</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Dancing+Script:wght@400;700&display=swap');
+       
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f1eb; /* Color de fondo suave */
+        }
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        .countdown-number {
+            font-size: 2.5rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+        .countdown-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="relative h-screen bg-cover bg-center flex items-center justify-center p-4 text-white" style="background-image: url('http://googleusercontent.com/file_content/1');">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative text-center z-10">
+            <p class="text-xl md:text-2xl dancing-script mb-2">¡Nos casamos!</p>
+            <h1 class="text-4xl md:text-7xl font-bold tracking-tight dancing-script">
+                Marilú y Enrique
+            </h1>
+            <p class="text-lg md:text-xl mt-4 font-light">20 de Diciembre de 2025</p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 py-12 md:py-20">
+
+        <!-- Invitation Message -->
+        <section class="max-w-3xl mx-auto text-center my-12">
+            <p class="text-xl dancing-script text-gray-700">Con gran alegría, te invitamos a celebrar nuestra boda.</p>
+            <p class="mt-4 max-w-2xl mx-auto">
+                El 20 de diciembre de 2025 nos daremos el 'Sí'. Queremos compartir este día tan especial con las personas que más amamos. Esperamos que nos puedas acompañar a celebrar el comienzo de esta nueva etapa.
+            </p>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="max-w-4xl mx-auto text-center my-16 bg-white p-8 md:p-12 rounded-lg shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Cuenta Regresiva</h2>
+            <div id="countdown" class="flex justify-center items-center space-x-4 md:space-x-8">
+                <!-- Countdown will be rendered here by JS -->
+            </div>
+        </section>
+
+        <!-- Event Details Section -->
+        <section class="max-w-4xl mx-auto my-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Detalles del Evento</h2>
+            <div class="grid md:grid-cols-3 gap-8 md:gap-16">
+                <!-- Ceremony Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold dancing-script mb-2">Ceremonia Religiosa</h3>
+                    <p class="text-lg font-semibold">16:00 hrs</p>
+                    <p class="mt-2 text-gray-600">Capilla de la Hacienda la Luz, Tetecala, Morelos</p>
+                    <p class="text-sm text-gray-500 mt-1">Un momento muy especial en nuestras vidas.</p>
+                </div>
+                <!-- Coctel Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold dancing-script mb-2">Cóctel</h3>
+                    <p class="text-lg font-semibold">Después de la ceremonia</p>
+                    <p class="mt-2 text-gray-600">Hacienda la Luz, Tetecala, Morelos</p>
+                    <p class="text-sm text-gray-500 mt-1">¡Un brindis por los novios!</p>
+                </div>
+                <!-- Banquete Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold dancing-script mb-2">Banquete</h3>
+                    <p class="text-lg font-semibold">A continuación del cóctel</p>
+                    <p class="mt-2 text-gray-600">Hacienda la Luz, Morelos</p>
+                    <p class="text-sm text-gray-500 mt-1">¡A bailar y celebrar!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="max-w-4xl mx-auto my-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Ubicación</h2>
+            <div class="bg-white p-4 rounded-lg shadow-lg">
+                <p class="mb-4">Hacienda la Luz, Morelos</p>
+                <!-- Placeholder for map - a real map iframe would go here -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.3708892461944!2d-99.27785522502675!3d18.66571588252834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdde9527e75e9b%3A0xc34a41d91a92e10!2sHacienda%20La%20Luz!5e0!3m2!1sen!2smx!4v1672322055621!5m2!1sen!2smx"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded-lg"
+                ></iframe>
+                <a href="[Link a Google Maps]" target="_blank" class="mt-4 inline-block px-6 py-3 bg-[#a28670] text-white font-semibold rounded-full shadow-md hover:bg-[#8e745d] transition-colors">Ver en Google Maps</a>
+            </div>
+        </section>
+
+        <!-- Dress Code & Gifts Section -->
+        <section class="max-w-4xl mx-auto my-16 grid md:grid-cols-2 gap-8 md:gap-16 text-center">
+            <!-- Dress Code -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold dancing-script mb-2">Vestimenta</h3>
+                <p class="mt-2 text-gray-600">Formal, Hombres: Traje/p>
+                <p class="text-sm text-gray-500 mt-1">¡Nos encantaría que te sintieras cómodo!</p>
+            </div>
+            <!-- Gift Registry -->
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold dancing-script mb-2">Mesa de Regalos</h3>
+                <p class="mt-2 text-gray-600">Lo más importante es tu compañía pero si de verdad deseas hacernos un regalo, puedes ver nuestra mesa de regalos en:</p>
+                <a href="#" class="mt-4 inline-block px-6 py-3 bg-[#a28670] text-white font-semibold rounded-full shadow-md hover:bg-[#8e745d] transition-colors">Ver Mesa de Regalos</a>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="max-w-2xl mx-auto text-center my-16 bg-white p-8 md:p-12 rounded-lg shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Confirma tu Asistencia</h2>
+            <p class="mb-6 text-gray-600">Por favor, confirma tu asistencia antes del 1ro de Noviembre.</p>
+            <form id="rsvpForm" class="space-y-4">
+                <div>
+                    <label for="name" class="sr-only">Tu Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Tu Nombre Completo" required class="w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-[#a28670]">
+                </div>
+                <div>
+                    <label for="vegetarian" class="block text-sm font-medium text-gray-700">¿Requieres comida vegetariana?</label>
+                    <select id="vegetarian" name="vegetarian" required class="mt-1 block w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-[#a28670]">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full px-6 py-3 bg-[#a28670] text-white font-semibold rounded-full shadow-md hover:bg-[#8e745d] transition-colors">Enviar Confirmación</button>
+            </form>
+            <!-- Custom message box instead of alert() -->
+            <div id="rsvpMessage" class="hidden mt-4 p-4 rounded-lg text-center" role="alert"></div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="max-w-4xl mx-auto my-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Galería</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="http://googleusercontent.com/file_content/2" alt="Marilú y Enrique en un puente" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="http://googleusercontent.com/file_content/3" alt="Marilú y Enrique en la ciudad" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="http://googleusercontent.com/file_content/4" alt="Marilú y Enrique en una cena romántica" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/d7d1b1/ffffff?text=Foto+4" alt="Foto de la boda 4" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/b1c3d7/ffffff?text=Foto+5" alt="Foto de la boda 5" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/c3d7b1/ffffff?text=Foto+6" alt="Foto de la boda 6" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/d1b1d7/ffffff?text=Foto+7" alt="Foto de la boda 7" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="https://placehold.co/400x400/b1d7d1/ffffff?text=Foto+8" alt="Foto de la boda 8" class="rounded-lg shadow-md w-full h-auto object-cover">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-white py-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-4">¡Gracias por ser parte de nuestra historia!</h2>
+        <p class="text-sm text-gray-500">&copy; 2025 Marilú & Enrique. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript for the countdown timer
+        const weddingDate = new Date("December 20, 2025 16:00:00").getTime();
+       
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const countdownElement = document.getElementById("countdown");
+            if (countdownElement) {
+                countdownElement.innerHTML = `
+                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
+                        <span class="countdown-number">${days < 10 ? '0' + days : days}</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
+                        <span class="countdown-number">${hours < 10 ? '0' + hours : hours}</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
+                        <span class="countdown-number">${minutes < 10 ? '0' + minutes : minutes}</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
+                        <span class="countdown-number">${seconds < 10 ? '0' + seconds : seconds}</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                `;
+            }
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                if (countdownElement) {
+                    countdownElement.innerHTML = "¡Hemos llegado al gran día!";
+                }
+            }
+        }
+       
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call to display immediately
+
+        // JavaScript for the RSVP form (simple simulation)
+        const rsvpForm = document.getElementById('rsvpForm');
+        const rsvpMessage = document.getElementById('rsvpMessage');
+
+        if(rsvpForm && rsvpMessage) {
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const vegetarian = document.getElementById('vegetarian').value;
+
+                // Simulate form submission success
+                console.log(`RSVP de ${name}. Comida vegetariana requerida: ${vegetarian}`);
+               
+                rsvpMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-700';
+                rsvpMessage.innerHTML = `<p>¡Gracias, ${name}! Tu confirmación ha sido recibida. ¿Requieres comida vegetariana? <strong>${vegetarian}</strong></p>`;
+                rsvpMessage.classList.remove('hidden');
+
+                // Clear the form
+                rsvpForm.reset();
+            });
+        }
+    </script>
+
+</body>
+</html>
