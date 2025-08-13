@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Dancing+Script:wght@400;700&display=swap');
-       
+        
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7f1eb; /* Color de fondo suave */
@@ -26,14 +26,44 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
+        /* Estilos personalizados para efectos de hover en botones */
+        .btn-primary {
+            transition: all 0.3s ease-in-out; /* Transición suave para todos los cambios */
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px); /* Pequeño levantamiento al pasar el ratón */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+            background-color: #f97316; /* Naranja más oscuro al hacer hover */
+        }
+        /* Estilo para el cuadro de mensaje */
+        .message-box {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Spinner para estado de carga */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #f97316; /* Color del spinner a juego con el tema */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Header Section -->
-    <header class="relative h-screen bg-cover bg-center flex items-center justify-center p-4 text-white" style="background-image: url('http://googleusercontent.com/file_content/1');">
-        <div class="absolute inset-0 bg-black opacity-30"></div>
-        <div class="relative text-center z-10">
+    <!-- Sección de Cabecera -->
+    <header class="relative h-screen bg-cover bg-center flex items-center justify-center p-4 text-white" style="background-image: url('images/6.jpg');">
+        <!-- Overlay con degradado para tema amarillo/naranja y contraste mejorado -->
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 opacity-70"></div>
+        <div class="relative text-center z-10 bg-white bg-opacity-20 p-6 rounded-xl backdrop-blur-sm mx-4 shadow-xl">
             <p class="text-xl md:text-2xl dancing-script mb-2">¡Nos casamos!</p>
             <h1 class="text-4xl md:text-7xl font-bold tracking-tight dancing-script">
                 Marilú y Enrique
@@ -42,46 +72,46 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Contenedor Principal de Contenido -->
     <main class="container mx-auto px-4 py-12 md:py-20">
 
-        <!-- Invitation Message -->
-        <section class="max-w-3xl mx-auto text-center my-12">
+        <!-- Mensaje de Invitación -->
+        <section class="max-w-3xl mx-auto text-center my-12 bg-white p-8 rounded-lg shadow-lg">
             <p class="text-xl dancing-script text-gray-700">Con gran alegría, te invitamos a celebrar nuestra boda.</p>
-            <p class="mt-4 max-w-2xl mx-auto">
+            <p class="mt-4 max-w-2xl mx-auto text-gray-700 leading-relaxed">
                 El 20 de diciembre de 2025 nos daremos el 'Sí'. Queremos compartir este día tan especial con las personas que más amamos. Esperamos que nos puedas acompañar a celebrar el comienzo de esta nueva etapa.
             </p>
         </section>
 
-        <!-- Countdown Section -->
+        <!-- Sección de Cuenta Regresiva -->
         <section class="max-w-4xl mx-auto text-center my-16 bg-white p-8 md:p-12 rounded-lg shadow-lg">
             <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Cuenta Regresiva</h2>
-            <div id="countdown" class="flex justify-center items-center space-x-4 md:space-x-8">
-                <!-- Countdown will be rendered here by JS -->
+            <div id="countdown" class="flex flex-wrap justify-center items-center space-x-2 md:space-x-8 gap-y-4">
+                <!-- La cuenta regresiva se renderizará aquí mediante JS -->
             </div>
         </section>
 
-        <!-- Event Details Section -->
+        <!-- Sección de Detalles del Evento -->
         <section class="max-w-4xl mx-auto my-16 text-center">
             <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Detalles del Evento</h2>
             <div class="grid md:grid-cols-3 gap-8 md:gap-16">
-                <!-- Ceremony Card -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold dancing-script mb-2">Ceremonia Religiosa</h3>
+                <!-- Tarjeta de Ceremonia -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-400">
+                    <h3 class="text-2xl font-bold dancing-script mb-2 text-orange-600">Ceremonia Religiosa</h3>
                     <p class="text-lg font-semibold">16:00 hrs</p>
                     <p class="mt-2 text-gray-600">Capilla de la Hacienda la Luz, Tetecala, Morelos</p>
                     <p class="text-sm text-gray-500 mt-1">Un momento muy especial en nuestras vidas.</p>
                 </div>
-                <!-- Coctel Card -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold dancing-script mb-2">Cóctel</h3>
+                <!-- Tarjeta de Cóctel -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-amber-400">
+                    <h3 class="text-2xl font-bold dancing-script mb-2 text-amber-600">Cóctel</h3>
                     <p class="text-lg font-semibold">Después de la ceremonia</p>
                     <p class="mt-2 text-gray-600">Hacienda la Luz, Tetecala, Morelos</p>
                     <p class="text-sm text-gray-500 mt-1">¡Un brindis por los novios!</p>
                 </div>
-                <!-- Banquete Card -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold dancing-script mb-2">Banquete</h3>
+                <!-- Tarjeta de Banquete -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-400">
+                    <h3 class="text-2xl font-bold dancing-script mb-2 text-orange-600">Banquete</h3>
                     <p class="text-lg font-semibold">A continuación del cóctel</p>
                     <p class="mt-2 text-gray-600">Hacienda la Luz, Morelos</p>
                     <p class="text-sm text-gray-500 mt-1">¡A bailar y celebrar!</p>
@@ -89,14 +119,14 @@
             </div>
         </section>
 
-        <!-- Location Section -->
+        <!-- Sección de Ubicación -->
         <section class="max-w-4xl mx-auto my-16 text-center">
             <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Ubicación</h2>
             <div class="bg-white p-4 rounded-lg shadow-lg">
-                <p class="mb-4">Hacienda la Luz, Morelos</p>
-                <!-- Placeholder for map - a real map iframe would go here -->
+                <p class="mb-4 text-gray-700">Hacienda la Luz, Morelos</p>
+                <!-- Iframe de Google Maps -->
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.3708892461944!2d-99.27785522502675!3d18.66571588252834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdde9527e75e9b%3A0xc34a41d91a92e10!2sHacienda%20La%20Luz!5e0!3m2!1sen!2smx!4v1672322055621!5m2!1sen!2smx"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.3708892461944!2d-99.27785522502675!3d18.66571588252834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdcfb8e4f00c0d%3A0x9c76ffc8a9860faa!2sHacienda%20La%20Luz!5e0!3m2!1sen!2smx!4v1672322055621!5m2!1sen!2smx"
                     width="100%"
                     height="450"
                     style="border:0;"
@@ -105,76 +135,175 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     class="rounded-lg"
                 ></iframe>
-                <a href="[Link a Google Maps]" target="_blank" class="mt-4 inline-block px-6 py-3 bg-[#a28670] text-white font-semibold rounded-full shadow-md hover:bg-[#8e745d] transition-colors">Ver en Google Maps</a>
+                <a href="https://www.google.com/maps/place/hacienda+la+luz+morelos/data=!4m2!3m1!1s0x85cdcfb8e4f00c0d:0x9c76ffc8a9860faa?sa=X&ved=1t:242&ictx=111" target="_blank" class="btn-primary mt-4 inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md">Ver en Google Maps</a>
             </div>
         </section>
 
-        <!-- Dress Code & Gifts Section -->
+        <!-- Sección de Hoteles Recomendados -->
+        <section class="max-w-4xl mx-auto my-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Hoteles Recomendados</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-400">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold dancing-script mb-2 text-orange-600">Hotel Hacienda la Luz</h3>
+                    <p class="text-lg font-semibold text-gray-700 mb-2">¡Ideal para tu estancia!</p>
+                    <p class="text-gray-600 mb-2">
+                        Recomendamos encarecidamente quedarse en el **Hotel Hacienda la Luz**, ya que aquí se llevarán a cabo la ceremonia religiosa, el cóctel y el banquete. Esto les permitirá disfrutar plenamente del evento sin preocuparse por traslados.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Teléfono para reservas: <a href="tel:+525580547530" class="text-blue-600 hover:underline">55 8054 7530</a>
+                    </p>
+                    <a href="https://share.google/COD00YYFyRgxS5GH9" target="_blank" class="btn-primary inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md">
+                        Ver Hotel Hacienda la Luz en Google Maps
+                    </a>
+                </div>
+                <hr class="my-8 border-gray-200">
+                <h3 class="text-2xl font-bold dancing-script mb-4 text-amber-600">Otras Opciones de Hoteles (a 20 minutos)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-amber-300">
+                        <h4 class="text-xl font-semibold mb-2">Hotel Club Primavera</h4>
+                        <a href="https://maps.app.goo.gl/QSW2beBKhs9SVbRPA" target="_blank" class="text-blue-600 hover:underline">Ver en Google Maps</a>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-amber-300">
+                        <h4 class="text-xl font-semibold mb-2">Hotel Villasol</h4>
+                        <a href="https://maps.app.goo.gl/7BgCwdcCCMTAdCeC6" target="_blank" class="text-blue-600 hover:underline">Ver en Google Maps</a>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-amber-300">
+                        <h4 class="text-xl font-semibold mb-2">Fiesta Americana Hacienda San Antonio El Puente Resort & Spa</h4>
+                        <a href="https://maps.app.goo.gl/AiLNKTcBxFkWDotq7" target="_blank" class="text-blue-600 hover:underline">Ver en Google Maps</a>
+                    </div>
+                    <!-- Nuevo Hotel -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-amber-300">
+                        <h4 class="text-xl font-semibold mb-2">Hacienda Santa Cruz</h4>
+                        <p class="text-gray-600 mb-2">
+                            Teléfono para reservas: <a href="tel:+527779855193" class="text-blue-600 hover:underline">777 985 5193</a>
+                        </p>
+                        <a href="https://share.google/LSRteZ4bhJaW2JBVb" target="_blank" class="text-blue-600 hover:underline">Ver en Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Código de Vestimenta y Regalos -->
         <section class="max-w-4xl mx-auto my-16 grid md:grid-cols-2 gap-8 md:gap-16 text-center">
-            <!-- Dress Code -->
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold dancing-script mb-2">Vestimenta</h3>
-                <p class="mt-2 text-gray-600">Formal, Hombres: Traje/p>
-                <p class="text-sm text-gray-500 mt-1">¡Nos encantaría que te sintieras cómodo!</p>
+            <!-- Código de Vestimenta -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-amber-400">
+                <h3 class="text-2xl font-bold dancing-script mb-2 text-amber-600">Código de Vestimenta</h3>
+                <p class="mt-2 text-gray-600">
+                    Les pedimos amablemente que la vestimenta sea **Formal**.
+                </p>
+                <ul class="list-disc list-inside text-left mx-auto max-w-xs mt-3 text-gray-700">
+                    <li>Para los **hombres**: Se sugiere traje y corbata.</li>
+                    <li>Para las **mujeres**: Vestido de cóctel o vestido largo.</li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">
+                    ¡Lo más importante es que se sientan cómodos y disfruten con nosotros!
+                </p>
             </div>
-            <!-- Gift Registry -->
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold dancing-script mb-2">Mesa de Regalos</h3>
-                <p class="mt-2 text-gray-600">Lo más importante es tu compañía pero si de verdad deseas hacernos un regalo, puedes ver nuestra mesa de regalos en:</p>
-                <a href="#" class="mt-4 inline-block px-6 py-3 bg-[#a28670] text-white font-semibold rounded-full shadow-md hover:bg-[#8e745d] transition-colors">Ver Mesa de Regalos</a>
+            <!-- Mesa de Regalos -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-400">
+                <h3 class="text-2xl font-bold dancing-script mb-4 text-orange-600">Mesa de Regalos</h3>
+                <p class="mb-4 text-gray-600">Lo más importante es tu compañía, pero si de verdad deseas hacernos un regalo, puedes ver nuestras mesas de regalos:</p>
+                <div class="space-y-4">
+                    <a href="https://zepika.com/pages/boda-marilu-y-enrique" target="_blank" class="btn-primary w-full inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md">
+                        Zepika
+                    </a>
+                    <p class="text-sm text-gray-500">Mesa de regalos en línea.</p>
+                    <a href="https://www.elpalaciodehierro.com/buscar?eventId=399169" target="_blank" class="btn-primary w-full inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md">
+                        Palacio de Hierro (Evento: 399169)
+                    </a>
+                    <p class="text-sm text-gray-500">Número de evento: 399169.</p>
+                </div>
             </div>
         </section>
 
-        <!-- RSVP Section -->
-        <section class="max-w-2xl mx-auto text-center my-16 bg-white p-8 md:p-12 rounded-lg shadow-lg">
-            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Confirma tu Asistencia</h2>
+        <!-- Sección de Confirmación de Asistencia (RSVP) -->
+        <section class="max-w-2xl mx-auto text-center my-16 bg-white p-8 md:p-12 rounded-lg shadow-lg border-t-4 border-amber-400">
+            <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6 text-amber-600">Confirma tu Asistencia</h2>
             <p class="mb-6 text-gray-600">Por favor, confirma tu asistencia antes del 1ro de Noviembre.</p>
             <form id="rsvpForm" class="space-y-4">
                 <div>
                     <label for="name" class="sr-only">Tu Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Tu Nombre Completo" required class="w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-[#a28670]">
+                    <input type="text" id="name" name="name" placeholder="Tu Nombre Completo" required class="w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-orange-500">
                 </div>
                 <div>
-                    <label for="vegetarian" class="block text-sm font-medium text-gray-700">¿Requieres comida vegetariana?</label>
-                    <select id="vegetarian" name="vegetarian" required class="mt-1 block w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-[#a28670]">
+                    <label for="vegetarian" class="block text-sm font-medium text-gray-700 text-left mb-1">¿Requieres comida vegetariana?</label>
+                    <select id="vegetarian" name="vegetarian" required class="mt-1 block w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-orange-500">
                         <option value="">Selecciona una opción</option>
                         <option value="Sí">Sí</option>
                         <option value="No">No</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full px-6 py-3 bg-[#a28670] text-white font-semibold rounded-full shadow-md hover:bg-[#8e745d] transition-colors">Enviar Confirmación</button>
+                <button type="submit" id="rsvpSubmitBtn" class="btn-primary w-full px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md flex items-center justify-center">
+                    Enviar Confirmación
+                    <span id="spinner" class="spinner ml-3 hidden"></span>
+                </button>
             </form>
-            <!-- Custom message box instead of alert() -->
-            <div id="rsvpMessage" class="hidden mt-4 p-4 rounded-lg text-center" role="alert"></div>
+            <!-- Cuadro de mensaje personalizado en lugar de alert() -->
+            <div id="rsvpMessage" class="hidden mt-4 p-4 rounded-lg text-center message-box" role="alert"></div>
         </section>
 
-        <!-- Gallery Section -->
+        <!-- Sección de Galería -->
         <section class="max-w-4xl mx-auto my-16 text-center">
             <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6">Galería</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img src="http://googleusercontent.com/file_content/2" alt="Marilú y Enrique en un puente" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="http://googleusercontent.com/file_content/3" alt="Marilú y Enrique en la ciudad" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="http://googleusercontent.com/file_content/4" alt="Marilú y Enrique en una cena romántica" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="https://placehold.co/400x400/d7d1b1/ffffff?text=Foto+4" alt="Foto de la boda 4" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="https://placehold.co/400x400/b1c3d7/ffffff?text=Foto+5" alt="Foto de la boda 5" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="https://placehold.co/400x400/c3d7b1/ffffff?text=Foto+6" alt="Foto de la boda 6" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="https://placehold.co/400x400/d1b1d7/ffffff?text=Foto+7" alt="Foto de la boda 7" class="rounded-lg shadow-md w-full h-auto object-cover">
-                <img src="https://placehold.co/400x400/b1d7d1/ffffff?text=Foto+8" alt="Foto de la boda 8" class="rounded-lg shadow-md w-full h-auto object-cover">
+                <img src="images/4.jpg" alt="Marilú y Enrique en el Puente de Brooklyn" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/3.jpg" alt="Marilú y Enrique en Central Park" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/2.jpg" alt="Marilú y Enrique en Xochimilco" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/1.jpg" alt="Marilú y Enrique en una cena romántica con vista a la ciudad" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/7.jpg" alt="Marilú y Enrique en el estadio MetLife" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/10.jpg" alt="Marilú y Enrique con el skyline de Nueva York de fondo" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/11.jpg" alt="Marilú y Enrique en la nieve con el skyline de Nueva York" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
+                <img src="images/12.jpg" alt="Marilú y Enrique frente a un avión de guerra" class="rounded-lg shadow-md w-full h-auto object-cover aspect-square">
             </div>
         </section>
 
     </main>
 
-    <!-- Footer Section -->
+    <!-- Sección de Pie de Página -->
     <footer class="bg-white py-12 text-center">
         <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-4">¡Gracias por ser parte de nuestra historia!</h2>
         <p class="text-sm text-gray-500">&copy; 2025 Marilú & Enrique. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // JavaScript for the countdown timer
+    <script type="module">
+        // Firebase imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Variables globales de Firebase (proporcionadas por el entorno Canvas)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null; 
+        
+
+        let app, db, auth;
+
+        // Inicializar Firebase y autenticar
+        async function initFirebase() {
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                console.log("Firebase inicializado y autenticado.");
+            } catch (error) {
+                console.error("Error al inicializar Firebase o autenticar:", error);
+                displayMessage('Error al cargar la aplicación. Por favor, inténtalo de nuevo más tarde.', 'red');
+            }
+        }
+
+        // Llamar a la inicialización de Firebase
+        initFirebase();
+
+        // JavaScript para el temporizador de cuenta regresiva
         const weddingDate = new Date("December 20, 2025 16:00:00").getTime();
-       
+        
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
@@ -186,56 +315,115 @@
 
             const countdownElement = document.getElementById("countdown");
             if (countdownElement) {
-                countdownElement.innerHTML = `
-                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
-                        <span class="countdown-number">${days < 10 ? '0' + days : days}</span>
-                        <span class="countdown-label">Días</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
-                        <span class="countdown-number">${hours < 10 ? '0' + hours : hours}</span>
-                        <span class="countdown-label">Horas</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
-                        <span class="countdown-number">${minutes < 10 ? '0' + minutes : minutes}</span>
-                        <span class="countdown-label">Minutos</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner">
-                        <span class="countdown-number">${seconds < 10 ? '0' + seconds : seconds}</span>
-                        <span class="countdown-label">Segundos</span>
-                    </div>
-                `;
-            }
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                if (countdownElement) {
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
                     countdownElement.innerHTML = "¡Hemos llegado al gran día!";
+                    countdownElement.classList.add('text-2xl', 'font-semibold', 'text-gray-700');
+                } else {
+                    countdownElement.innerHTML = `
+                        <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner w-24 md:w-32">
+                            <span class="countdown-number">${days < 10 ? '0' + days : days}</span>
+                            <span class="countdown-label">Días</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner w-24 md:w-32">
+                            <span class="countdown-number">${hours < 10 ? '0' + hours : hours}</span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner w-24 md:w-32">
+                            <span class="countdown-number">${minutes < 10 ? '0' + minutes : minutes}</span>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-inner w-24 md:w-32">
+                            <span class="countdown-number">${seconds < 10 ? '0' + seconds : seconds}</span>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    `;
                 }
             }
         }
-       
+        
         const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call to display immediately
+        updateCountdown(); // Llamada inicial para mostrar inmediatamente
 
-        // JavaScript for the RSVP form (simple simulation)
+        // Función para mostrar mensajes en el cuadro de mensaje personalizado
+        function displayMessage(msg, type) {
+            const rsvpMessage = document.getElementById('rsvpMessage');
+            if (rsvpMessage) {
+                let bgColor, textColor;
+                switch (type) {
+                    case 'success':
+                        bgColor = 'bg-green-100';
+                        textColor = 'text-green-700';
+                        break;
+                    case 'error':
+                        bgColor = 'bg-red-100';
+                        textColor = 'text-red-700';
+                        break;
+                    default:
+                        bgColor = 'bg-blue-100';
+                        textColor = 'text-blue-700';
+                }
+                rsvpMessage.className = `mt-4 p-4 rounded-lg text-center message-box ${bgColor} ${textColor}`;
+                rsvpMessage.innerHTML = `<p>${msg}</p>`;
+                rsvpMessage.classList.remove('hidden');
+
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    rsvpMessage.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        // JavaScript para el formulario RSVP (integrando con Firebase)
         const rsvpForm = document.getElementById('rsvpForm');
-        const rsvpMessage = document.getElementById('rsvpMessage');
+        const rsvpSubmitBtn = document.getElementById('rsvpSubmitBtn');
+        const spinner = document.getElementById('spinner');
 
-        if(rsvpForm && rsvpMessage) {
-            rsvpForm.addEventListener('submit', function(e) {
+        if(rsvpForm && rsvpSubmitBtn && spinner) {
+            rsvpForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
+
+                // Mostrar spinner y deshabilitar botón
+                rsvpSubmitBtn.disabled = true;
+                spinner.classList.remove('hidden');
+
                 const name = document.getElementById('name').value;
                 const vegetarian = document.getElementById('vegetarian').value;
 
-                // Simulate form submission success
-                console.log(`RSVP de ${name}. Comida vegetariana requerida: ${vegetarian}`);
-               
-                rsvpMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-700';
-                rsvpMessage.innerHTML = `<p>¡Gracias, ${name}! Tu confirmación ha sido recibida. ¿Requieres comida vegetariana? <strong>${vegetarian}</strong></p>`;
-                rsvpMessage.classList.remove('hidden');
+                if (!db || !auth || !auth.currentUser) {
+                    displayMessage('La aplicación no está lista. Por favor, espera un momento o recarga la página.', 'error');
+                    rsvpSubmitBtn.disabled = false;
+                    spinner.classList.add('hidden');
+                    return;
+                }
 
-                // Clear the form
-                rsvpForm.reset();
+                try {
+                    // Crear un ID único para el usuario si no está autenticado
+                    const userId = auth.currentUser?.uid || crypto.randomUUID();
+
+                    // Guardar datos en Firestore en una colección 'public'
+                    // La ruta es /artifacts/{appId}/public/data/rsvps
+                    const rsvpRef = collection(db, `artifacts/${appId}/public/data/rsvps`);
+                    await addDoc(rsvpRef, {
+                        name: name,
+                        vegetarian: vegetarian,
+                        timestamp: new Date(),
+                        userId: userId // Almacenar userId para seguimiento, si es necesario
+                    });
+                    
+                    displayMessage(`¡Gracias, ${name}! Tu confirmación ha sido recibida.`, 'success');
+
+                    // Limpiar el formulario
+                    rsvpForm.reset();
+
+                } catch (error) {
+                    console.error("Error al enviar la confirmación:", error);
+                    displayMessage('Hubo un error al enviar tu confirmación. Por favor, inténtalo de nuevo.', 'error');
+                } finally {
+                    // Ocultar spinner y habilitar botón
+                    rsvpSubmitBtn.disabled = false;
+                    spinner.classList.add('hidden');
+                }
             });
         }
     </script>
