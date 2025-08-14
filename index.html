@@ -223,25 +223,8 @@
         <section class="max-w-2xl mx-auto text-center my-16 bg-white p-8 md:p-12 rounded-lg shadow-lg border-t-4 border-amber-400">
             <h2 class="text-3xl md:text-4xl font-bold dancing-script text-gray-800 mb-6 text-amber-600">Confirma tu Asistencia</h2>
             <p class="mb-6 text-gray-600">Por favor, confirma tu asistencia antes del 1ro de Noviembre.</p>
-            <form id="rsvpForm" class="space-y-4">
-                <div>
-                    <label for="name" class="sr-only">Tu Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Tu Nombre Completo" required class="w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-orange-500">
-                </div>
-                <div>
-                    <label for="vegetarian" class="block text-sm font-medium text-gray-700 text-left mb-1">¿Requieres comida vegetariana?</label>
-                    <select id="vegetarian" name="vegetarian" required class="mt-1 block w-full p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-orange-500">
-                        <option value="">Selecciona una opción</option>
-                        <option value="Sí">Sí</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-                <button type="submit" id="rsvpSubmitBtn" class="btn-primary w-full px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md flex items-center justify-center">
-                    Enviar Confirmación
-                    <span id="spinner" class="spinner ml-3 hidden"></span>
-                </button>
-            </form>
-            <!-- Cuadro de mensaje personalizado en lugar de alert() -->
+            <!-- El formulario y el botón de envío han sido eliminados según tu solicitud. -->
+            <!-- Cuadro de mensaje personalizado en lugar de alert() (se mantiene por si se quiere volver a añadir funcionalidad) -->
             <div id="rsvpMessage" class="hidden mt-4 p-4 rounded-lg text-center message-box" role="alert"></div>
         </section>
 
@@ -381,62 +364,9 @@
         const countdownInterval = setInterval(updateCountdown, 1000);
         updateCountdown(); // Llamada inicial para mostrar inmediatamente
 
-        // JavaScript para el formulario RSVP (integrando con Firebase)
-        const rsvpForm = document.getElementById('rsvpForm');
-        const rsvpSubmitBtn = document.getElementById('rsvpSubmitBtn');
-        const spinner = document.getElementById('spinner');
-
-        if(rsvpForm && rsvpSubmitBtn && spinner) {
-            // Espera a que Firebase esté listo antes de adjuntar el event listener
-            firebaseReadyPromise.then(() => {
-                rsvpForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-
-                    // Mostrar spinner y deshabilitar botón
-                    rsvpSubmitBtn.disabled = true;
-                    spinner.classList.remove('hidden');
-
-                    const name = document.getElementById('name').value;
-                    const vegetarian = document.getElementById('vegetarian').value;
-
-                    // En este punto, Firebase ya debería estar listo, así que la verificación inicial ya no es necesaria aquí.
-                    try {
-                        // Crear un ID único para el usuario si no está autenticado
-                        const userId = auth.currentUser?.uid || crypto.randomUUID();
-
-                        // Guardar datos en Firestore en una colección 'public'
-                        // La ruta es /artifacts/{appId}/public/data/rsvps
-                        const rsvpRef = collection(db, `artifacts/${appId}/public/data/rsvps`);
-                        await addDoc(rsvpRef, {
-                            name: name,
-                            vegetarian: vegetarian,
-                            timestamp: new Date(),
-                            userId: userId // Almacenar userId para seguimiento, si es necesario
-                        });
-                        
-                        displayMessage(`¡Gracias, ${name}! Tu confirmación ha sido recibida.`, 'success');
-
-                        // Limpiar el formulario
-                        rsvpForm.reset();
-
-                    } catch (error) {
-                        console.error("Error al enviar la confirmación:", error);
-                        displayMessage('Hubo un error al enviar tu confirmación. Por favor, inténtalo de nuevo.', 'error');
-                    } finally {
-                        // Ocultar spinner y habilitar botón
-                        rsvpSubmitBtn.disabled = false;
-                        spinner.classList.add('hidden');
-                    }
-                });
-            }).catch(error => {
-                // Si la inicialización de Firebase falla, deshabilita el botón y muestra un mensaje
-                console.error("Firebase no pudo inicializarse, el formulario no funcionará:", error);
-                displayMessage('La funcionalidad de confirmación no está disponible. Por favor, recarga la página.', 'error');
-                if (rsvpSubmitBtn) {
-                    rsvpSubmitBtn.disabled = true;
-                }
-            });
-        }
+        // El JavaScript para el formulario RSVP (integrando con Firebase) ha sido eliminado
+        // ya que el botón de envío y el formulario han sido quitados del HTML.
+        // Las variables rsvpForm, rsvpSubmitBtn y spinner ya no son necesarias aquí.
     </script>
 
 </body>
