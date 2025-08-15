@@ -75,7 +75,7 @@
     <!-- Contenedor Principal de Contenido -->
     <main class="container mx-auto px-4 py-12 md:py-20">
 
-        <!-- Sección de Padres -->
+        <!-- Sección de Padres (sin leyendas) -->
         <section class="max-w-4xl mx-auto text-center my-12 bg-white p-8 rounded-lg shadow-lg">
             <p class="text-xl dancing-script text-gray-700">Con la bendición de nuestros padres</p>
             <div class="mt-8 grid md:grid-cols-2 gap-8 text-center">
@@ -90,11 +90,14 @@
             </div>
         </section>
 
-        <!-- Mensaje de Invitación -->
+        <!-- Mensaje de Invitación (párrafo dividido) -->
         <section class="max-w-3xl mx-auto text-center my-12 bg-white p-8 rounded-lg shadow-lg">
             <p class="text-xl dancing-script text-gray-700">Y con gran alegría, te invitamos a celebrar nuestra boda.</p>
             <p class="mt-4 max-w-2xl mx-auto text-gray-700 leading-relaxed">
-                El 20 de diciembre de 2025 nos daremos el 'Sí'. Queremos compartir este día tan especial con las personas que más amamos. Esperamos que nos puedas acompañar a celebrar el comienzo de esta nueva etapa.
+                El 20 de diciembre de 2025 nos daremos el 'Sí', y queremos compartir este día tan especial con las personas que más amamos.
+            </p>
+            <p class="mt-2 max-w-2xl mx-auto text-gray-700 leading-relaxed">
+                Esperamos que nos puedas acompañar a celebrar el comienzo de esta nueva etapa.
             </p>
         </section>
 
@@ -163,7 +166,7 @@
                     <h3 class="text-2xl font-bold dancing-script mb-2 text-orange-500">Hotel Hacienda la Luz</h3>
                     <p class="text-lg font-semibold text-gray-700 mb-2">¡Ideal para tu estancia!</p>
                     <p class="text-gray-600 mb-2">
-                        Recomendamos quedarse en el **Hotel Hacienda la Luz**, ya que aquí se llevarán a cabo la ceremonia religiosa, el cóctel y el banquete. Esto les permitirá disfrutar plenamente del evento sin preocuparse por traslados.
+                        Recomendamos quedarse en el <span class="font-bold">Hotel Hacienda la Luz</span>, ya que aquí se llevarán a cabo la ceremonia religiosa, el cóctel y el banquete. Esto les permitirá disfrutar plenamente del evento sin preocuparse por traslados.
                     </p>
                     <p class="text-gray-600 mb-4">
                         Teléfono para reservas: <a href="tel:+525580547530" class="text-blue-600 hover:underline">55 8054 7530</a>
@@ -199,43 +202,56 @@
             </div>
         </section>
 
-        <!-- Sección de Código de Vestimenta y Regalos -->
-        <section class="max-w-4xl mx-auto my-16 grid md:grid-cols-2 gap-8 md:gap-16 text-center">
-            <!-- Código de Vestimenta -->
-            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-amber-300">
-                <h3 class="text-2xl font-bold dancing-script mb-2 text-amber-500">Código de Vestimenta</h3>
-                <p class="mt-2 text-gray-600">
-                    Les pedimos amablemente que la vestimenta sea **Formal**.
-                </p>
-                <ul class="list-disc list-inside text-left mx-auto max-w-xs mt-3 text-gray-700">
-                    <li>Para los **hombres**: Se sugiere traje y corbata.</li>
-                    <li>Para las **mujeres**: Vestido de cóctel o vestido largo.</li>
-                </ul>
-                <!-- Comentario solicitado: Sin niños -->
-                <p class="text-sm text-black font-semibold mt-4">Sin niños</p>
+        <!-- Sección de Código de Vestimenta, Mesa de Regalos y Sin Niños -->
+        <section class="max-w-4xl mx-auto my-16 flex flex-col md:flex-row gap-8 items-stretch">
+            <!-- Columna de Código de Vestimenta y Sin Niños (ahora a la izquierda) -->
+            <div class="flex-1 flex flex-col gap-8">
+                <!-- Código de Vestimenta -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-amber-300 flex-1 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold dancing-script mb-2 text-amber-500 text-center">Código de Vestimenta</h3>
+                    <p class="mt-2 text-gray-600 text-center">
+                        Les pedimos amablemente que la vestimenta sea <span class="font-bold">Formal</span>.
+                    </p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-xs mt-3 text-gray-700">
+                        <li>Para los <span class="font-bold">hombres</span>: Se sugiere traje y corbata.</li>
+                        <li>Para las <span class="font-bold">mujeres</span>: Vestido de cóctel o vestido largo.</li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta de "Sin Niños" (actualizada) -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-amber-300 flex-1 flex items-center justify-center text-center">
+                    <div class="text-gray-800">
+                        <p class="text-xl dancing-script mb-2 text-amber-500">Nota Importante</p>
+                        <p class="text-base font-normal">
+                            Agradeceríamos que el evento sea sin niños.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <!-- Mesa de Regalos -->
-            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-300">
-                <h3 class="text-2xl font-bold dancing-script mb-4 text-orange-500">Mesa de Regalos</h3>
-                <p class="mb-4 text-gray-600">Lo más importante es tu compañía, pero si de verdad deseas hacernos un regalo, puedes ver nuestras mesas de regalos:</p>
+            
+            <!-- Columna de Regalos (ahora a la derecha) -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-orange-300 flex-1">
+                <h3 class="text-2xl font-bold dancing-script mb-4 text-orange-500 text-center">Mesa de Regalos</h3>
+                <p class="mb-4 text-gray-600 text-center">Lo más importante es tu compañía, pero si de verdad deseas hacernos un regalo, puedes ver nuestras mesas de regalos:</p>
                 <div class="space-y-4">
-                    <a href="https://zepika.com/pages/boda-marilu-y-enrique" target="_blank" class="btn-primary w-full inline-block px-6 py-3 bg-orange-400 text-white font-semibold rounded-full shadow-md">
+                    <a href="https://zepika.com/pages/boda-marilu-y-enrique" target="_blank" class="btn-primary w-full inline-block px-6 py-3 bg-orange-400 text-white font-semibold rounded-full shadow-md text-center">
                         Zepika
                     </a>
-                    <p class="text-sm text-gray-500">Mesa de regalos en línea.</p>
-                    <a href="https://www.elpalaciodehierro.com/buscar?eventId=399169" target="_blank" class="btn-primary w-full inline-block px-6 py-3 bg-orange-400 text-white font-semibold rounded-full shadow-md">
+                    <p class="text-sm text-gray-500 text-center">Mesa de regalos en línea.</p>
+                    <a href="https://www.elpalaciodehierro.com/buscar?eventId=399169" target="_blank" class="btn-primary w-full inline-block px-6 py-3 bg-orange-400 text-white font-semibold rounded-full shadow-md text-center">
                         Palacio de Hierro (Evento: 399169)
                     </a>
-                    <p class="text-sm text-gray-500">Número de evento: 399169.</p>
+                    <p class="text-sm text-gray-500 text-center">Número de evento: 399169.</p>
                     <!-- Nuevo concepto: Cuenta Bancaria -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-amber-300 text-left">
                         <h4 class="text-xl font-semibold mb-2 text-gray-800">Transferencia Bancaria</h4>
-                        <p class="text-gray-700">A nombre de: <strong>María de Lourdes Peña Gómez del Campo</strong></p>
-                        <p class="text-gray-700">Banco: <strong>Banamex</strong></p>
+                        <p class="text-gray-700">A nombre de: <span class="font-bold">María de Lourdes Peña Gómez del Campo</span></p>
+                        <p class="text-gray-700">Banco: <span class="font-bold">Banamex</span></p>
                         <p class="text-gray-700">CLABE: <span class="font-mono text-orange-500">002180700454426733</span></p>
                         <p class="text-gray-700">Cuenta: <span class="font-mono text-orange-500">5442673</span></p>
                         <p class="text-gray-700">Sucursal: <span class="font-mono text-orange-500">7004</span></p>
-                        <p class="text-sm text-gray-500 mt-2">Agradecemos de antemano su generosidad.</p>
+                        <!-- Texto de agradecimiento en gris, con tamaño reducido -->
+                        <p class="text-sm text-gray-500 mt-4">Agradecemos de antemano su generosidad.</p>
                     </div>
                 </div>
             </div>
@@ -279,15 +295,15 @@
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Variables globales de Firebase (proporcionadas por el entorno Canvas)
+        // Global Firebase variables (provided by the Canvas environment)
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
         
         let app, db, auth;
-        let firebaseReadyPromise; // Para almacenar la promesa de inicialización de Firebase
+        let firebaseReadyPromise; // To store the Firebase initialization promise
 
-        // Función para mostrar mensajes en el cuadro de mensaje personalizado
+        // Function to display messages in the custom message box
         function displayMessage(msg, type) {
             const rsvpMessage = document.getElementById('rsvpMessage');
             if (rsvpMessage) {
@@ -309,14 +325,14 @@
                 rsvpMessage.innerHTML = `<p>${msg}</p>`;
                 rsvpMessage.classList.remove('hidden');
 
-                // Ocultar mensaje después de 5 segundos
+                // Hide message after 5 seconds
                 setTimeout(() => {
                     rsvpMessage.classList.add('hidden');
                 }, 5000);
             }
         }
 
-        // Inicializar Firebase y autenticar
+        // Initialize Firebase and authenticate
         async function initFirebase() {
             return new Promise(async (resolve, reject) => {
                 try {
@@ -329,20 +345,20 @@
                     } else {
                         await signInAnonymously(auth);
                     }
-                    console.log("Firebase inicializado y autenticado.");
-                    resolve(); // Resuelve la promesa una vez que Firebase esté listo
+                    console.log("Firebase initialized and authenticated.");
+                    resolve(); // Resolve the promise once Firebase is ready
                 } catch (error) {
                     console.error("Error al inicializar Firebase o autenticar:", error);
                     displayMessage('Error al cargar la aplicación. Por favor, intenta de nuevo más tarde.', 'error');
-                    reject(error); // Rechaza la promesa en caso de error
+                    reject(error); // Reject the promise in case of an error
                 }
             });
         }
 
-        // Llama a la inicialización de Firebase y guarda la promesa
+        // Call Firebase initialization and store the promise
         firebaseReadyPromise = initFirebase();
 
-        // JavaScript para el temporizador de cuenta regresiva
+        // JavaScript for the countdown timer
         const weddingDate = new Date("December 20, 2025 16:00:00").getTime();
         
         function updateCountdown() {
@@ -384,11 +400,8 @@
         }
         
         const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Llamada inicial para mostrar inmediatamente
+        updateCountdown(); // Initial call to display immediately
 
-        // El JavaScript para el formulario RSVP (integrando con Firebase) ha sido eliminado
-        // ya que el botón de envío y el formulario han sido quitados del HTML.
-        // Las variables rsvpForm, rsvpSubmitBtn y spinner ya no son necesarias aquí.
     </script>
 
 </body>
